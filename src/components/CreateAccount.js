@@ -35,6 +35,8 @@ function CreateAccount() {
     setShow(true)
   }
 
+  const isButtonDisabled = !name && !email && !password
+
   return (
     <Card
       bgcolor="primary"
@@ -87,7 +89,12 @@ function CreateAccount() {
         ) : (
           <>
             <h5>Success</h5>
-            <button type="submit" className="btn btn-light" onClick={clearForm}>
+            <button
+              type="submit"
+              className="btn btn-light"
+              disabled={isButtonDisabled}
+              onClick={clearForm}
+            >
               Add another account
             </button>
           </>

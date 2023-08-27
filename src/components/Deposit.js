@@ -47,6 +47,8 @@ function Deposit() {
     setShow(true)
   }
 
+  const isButtonDisabled = deposit === ''
+
   return (
     <Card
       bgcolor="primary"
@@ -78,7 +80,12 @@ function Deposit() {
         ) : (
           <>
             <h5>Success</h5>
-            <button type="submit" className="btn btn-light" onClick={clearForm}>
+            <button
+              type="submit"
+              className="btn btn-light"
+              disabled={isButtonDisabled}
+              onClick={clearForm}
+            >
               Check updated balance
             </button>
           </>
